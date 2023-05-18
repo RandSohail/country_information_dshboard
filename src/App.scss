@@ -1,0 +1,17 @@
+$small-screen: 600px;
+
+.main-container{
+  width: 80%;
+  margin: 90px auto
+}
+
+.search-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media ( max-width: $small-screen){
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+}
