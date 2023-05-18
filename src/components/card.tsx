@@ -1,8 +1,8 @@
 import { Card, CardContent, Typography, CardActionArea } from '@mui/material';
 import TitleText from './titleText';
-import { CountryObject } from '../helper/types';
+import { types } from '../helper';
 
-export default function countryCard(props: CountryObject) {
+export default function countryCard(props: types.CountryObject) {
   return (
     <Card sx={{ width: 250 }} variant="outlined">
       <CardActionArea>
@@ -11,7 +11,7 @@ export default function countryCard(props: CountryObject) {
             {props.emoji} {props.name} ({props.code})
           </Typography>
           <TitleText title="Native" text={props.native} />
-          <TitleText title="Capital" text={props.currency} />
+          <TitleText title="Capital" text={props.capital} />
           <TitleText title="Continent" text={props.continent.name} />
           <TitleText title="Currency" text={props.currency} />
           <TitleText title="Phone" text={props.phone} />

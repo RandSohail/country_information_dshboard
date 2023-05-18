@@ -1,6 +1,6 @@
-import React from 'react';
 import { Box, Typography } from '@mui/material';
 import errorImage from '../assets/images/error.jpg';
+
 export default function errorFetching() {
   return (
     <Box sx={{ textAlign: 'center', margin: '100px ' }}>

@@ -1,10 +1,8 @@
 import React from 'react';
 import { Typography, Box } from '@mui/material';
-type TitleTextProps = {
-  title: string;
-  text?: string;
-};
-export default function titleText({ title, text }: TitleTextProps) {
+import { types } from '../helper';
+
+export default function titleText({ title, text }: types.TitleTextProps) {
   return (
     <Box sx={{ mb: 2 }}>
       <Typography

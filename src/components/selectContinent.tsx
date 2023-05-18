@@ -1,13 +1,13 @@
-import React from 'react';
 import { MenuItem } from '@mui/material';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
-import { Continents } from '../constant';
+import { constants } from '../helper';
 
 type test = {
   filterContinent: string;
   setFilterContinent: (value: string) => void;
 };
 export default function selectContinent(props: test) {
+  const { Continents } = constants;
   const handleChange = (event: SelectChangeEvent) => {
     props.setFilterContinent(event.target.value);
   };

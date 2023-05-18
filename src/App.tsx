@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Box } from '@mui/material';
 
-import { FALLBACK_COUNTRIES } from './constant';
+import { FALLBACK_COUNTRIES } from './helper/constant';
 import {
   SearchInput,
   CountryCard,
@@ -10,8 +10,7 @@ import {
   Error,
   SelectContinent
 } from './components';
-import { CountryObject } from './helper/types';
-import useCountries from './helper/useCountries';
+import { types, useCountries } from './helper';
 import './App.scss';
 
 export default function App() {
@@ -23,7 +22,7 @@ export default function App() {
   useEffect(() => {
     if (data) {
       const filteredRegionName = data.countries.filter(
-        (item: CountryObject) =>
+        (item: types.CountryObject) =>
           item.name.toLocaleLowerCase().startsWith(filterName) &&
           (filterContinent === 'All Region' ||
             item.continent.name === filterContinent)
@@ -56,7 +55,7 @@ export default function App() {
         {data && filteredData.length === 0 ? (
           <h2>No result</h2>
         ) : (
-          filteredData.map((data: CountryObject) => (
+          filteredData.map((data: types.CountryObject) => (
             <CountryCard key={data.name} {...data} />
           ))
         )}

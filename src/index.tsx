@@ -5,6 +5,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './Index.scss';
+import { ErrorBoundary } from './helper';
 
 const theme = createTheme({
   palette: {
@@ -27,7 +28,9 @@ root.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
       <ThemeProvider theme={theme}>
-        <App />
+        <ErrorBoundary>
+          <App />
+        </ErrorBoundary>
       </ThemeProvider>
     </ApolloProvider>
   </React.StrictMode>

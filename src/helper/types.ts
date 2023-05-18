@@ -1,4 +1,4 @@
-export interface CountryObject {
+export type CountryObject = {
   code: number;
   name: string;
   native: string;
@@ -8,4 +8,12 @@ export interface CountryObject {
   phone: string;
   languages: [{ code: string; name: string }];
   continent: { code: string; name: string };
-}
+};
+export type TitleTextProps = {
+  title: string;
+  text?: string;
+};
+
+export type SearchInputProps = {
+  setFilterName: (value: string) => void;
+};

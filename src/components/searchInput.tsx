@@ -1,10 +1,7 @@
 import { TextField } from '@mui/material';
+import { types } from '../helper';
 
-type PropsType = {
-  setFilterName: (value: string) => void;
-};
-
-export default function searchInput(props: PropsType) {
+export default function searchInput(props: types.SearchInputProps) {
   const handelInput = (
     event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
   ) => {
