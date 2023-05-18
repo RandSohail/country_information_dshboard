@@ -1,2 +1,10 @@
-# react-ts
-This is a template repo using react with typescript, eslint and prettier 
+# Country Information
+
+## [Deployment Link](https://countries-information-rand.netlify.app/)
+
+## Setup Instructions
+```
+git clone https://github.com/RandSohail/country_information_dshboard.git
+npm install
+npm start
+```
