@@ -1,14 +1,19 @@
-import styled from 'styled-components';
+import { AppBar, Toolbar, Typography, Avatar } from '@mui/material';
+import logo from '../assets/images/world.png';
 
-const ManiTitle = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  color: palevioletred;
-`;
 export default function NavBar() {
   return (
-    <>
-      <ManiTitle>NavBar</ManiTitle>
-    </>
+    <AppBar color="primary">
+      <Toolbar>
+        <Avatar alt="CI" src={logo} />
+        <Typography
+          variant="h6"
+          align="center"
+          sx={{ fontWeight: 700, marginLeft: '10px' }}
+        >
+          Where in the world?
+        </Typography>
+      </Toolbar>
+    </AppBar>
   );
 }

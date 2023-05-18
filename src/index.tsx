@@ -1,15 +1,35 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import GlobalStyle from "./globalStyles";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import './Index.scss';
 
-const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#8294C4'
+    }
+  }
+});
+
+const client = new ApolloClient({
+  cache: new InMemoryCache(),
+  uri: 'https://countries.trevorblades.com'
+});
+
+const root = ReactDOM.createRoot(
+  document.getElementById('root') as HTMLElement
+);
 
 root.render(
   <React.StrictMode>
-    <GlobalStyle />
-    <App />
+    <ApolloProvider client={client}>
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
+    </ApolloProvider>
   </React.StrictMode>
 );
 
